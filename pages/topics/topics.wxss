@@ -1,0 +1,45 @@
+.avatar-img {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 5rpx;
+}
+.topic-item {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1rpx solid lightgray;
+    margin-left: 20rpx;
+    margin-bottom: 20rpx;
+    padding-bottom: 20rpx;
+}
+.topic-item .item-left {
+  /*padding-right: 20rpx;*/
+  width: 100rpx;
+  overflow: hidden;
+}
+
+.item-right {
+  width: 650rpx;
+}
+.author-name,.create_time,.count-text  {
+    font-size: 20rpx;
+    color: lightgray;
+    float: left;
+}
+.count-text  {
+   float: right;
+}
+.bottom-text {
+    margin-top: 20rpx;
+}
+
+.item-right {
+ padding-right: 20rpx;
+}
+
+.item-title-text {
+    font-size: 30rpx;
+    font-weight: bold;
+}
+.create_time {
+    margin-left: 10rpx;
+}

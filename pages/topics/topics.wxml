@@ -1,0 +1,19 @@
+<view>
+  <block wx:for="{{topics}}" wx:key="*this">
+    <view id="{{item.id}}" class="topic-item" data-artical-id="{{item.id}}" bindtap="itemClick">
+      <view class="item-left">
+        <image class="avatar-img" src="{{item.author.avatar_url}}"></image>
+      </view>
+      <view class="item-right">
+        <view>
+          <text class="item-title-text">{{item.title}}</text>
+        </view>
+        <view class="bottom-text clearfix">
+          <text class="author-name">{{item.author.loginname}}</text>
+          <text class="create_time">{{item.create_at}}</text>
+          <text class="count-text">{{item.reply_count}}/{{item.visit_count}}              </text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

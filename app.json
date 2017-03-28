@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/topics/topics",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "益品良文",
+    "navigationBarTextStyle":"black"
+  },
+   "debug": true
+}

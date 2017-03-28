@@ -1,0 +1,7 @@
+<view>
+    <view class="title">
+        <text>
+        {{artical.title}}
+        </text>
+    </view>
+</view>

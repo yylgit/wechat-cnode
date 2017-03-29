@@ -1,0 +1,13 @@
+@import '../../html-view/index.wxss';
+
+.detail-page {
+    padding: 0rpx 20rpx;
+}
+.subtitle {
+    display: flex;
+    flex-direction: row;
+}
+.subtitle text {
+    font-size: 20rpx;
+    color: lightgray;
+}

@@ -16,3 +16,7 @@
   clear: both;
   height: 0px;
 }
+
+.ml20 {
+    margin-left: 20rpx;
+}

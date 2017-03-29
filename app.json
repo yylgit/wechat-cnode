@@ -6,10 +6,10 @@
     "pages/detail/detail"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "益品良文",
-    "navigationBarTextStyle":"black"
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#343434",
+    "navigationBarTitleText": "CNODE",
+    "navigationBarTextStyle":"#fff"
   },
    "debug": true
 }

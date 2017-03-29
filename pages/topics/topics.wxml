@@ -1,5 +1,14 @@
-<view>
-  <block wx:for="{{topics}}" wx:key="*this">
+<view class="tab-wrap">
+  <view 
+    class="{{item.key === activeTab ? 'tab-item active' : 'tab-item'}}"
+    data-tab="{{item.key}}"
+    bindtap="tabClick"
+    wx:for="{{tabList}}" wx:key="{{item.key}}">
+    <text>{{item.value}}</text>
+  </view>
+</view>
+<view class="topics-page">
+  <block wx:for="{{topics}}" wx:key="{{item.id}}">
     <view id="{{item.id}}" class="topic-item" data-artical-id="{{item.id}}" bindtap="itemClick">
       <view class="item-left">
         <image class="avatar-img" src="{{item.author.avatar_url}}"></image>
@@ -17,3 +26,7 @@
     </view>
   </block>
 </view>
+<view class="bottom-more" v-show="{{fetchMore}}">
+ <text>加载更多......</text>
+</view>
+<view class="not-login"></view>

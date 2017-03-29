@@ -1,3 +1,9 @@
+page {
+    height: 100%;
+}
+.topics-page {
+    padding-top: 20rpx;
+}
 .avatar-img {
     width: 80rpx;
     height: 80rpx;
@@ -6,13 +12,12 @@
 .topic-item {
     display: flex;
     flex-direction: row;
-    border-bottom: 1rpx solid lightgray;
+    border-bottom: 1rpx solid #f0f0f0;
     margin-left: 20rpx;
     margin-bottom: 20rpx;
     padding-bottom: 20rpx;
 }
 .topic-item .item-left {
-  /*padding-right: 20rpx;*/
   width: 100rpx;
   overflow: hidden;
 }
@@ -42,4 +47,38 @@
 }
 .create_time {
     margin-left: 10rpx;
+}
+.tab-wrap {
+    display: flex;
+    justify-content: space-around;
+    background-color: #F0F0F0;
+}
+.tab-item {
+    padding: 20rpx 10rpx;
+    color: #444;
+    font-size: 35rpx;
+}
+.tab-item.active {
+    color: #6EB600;
+    border-bottom: 6rpx solid #6EB600;
+}
+.bottom-more {
+    display: flex;
+    justify-content: center;
+    background-color: #E2E2E2;
+    font-size: 30rpx;
+    padding: 10rpx 0rpx;
+}
+.not-login {
+    width: 80rpx;
+    height: 80rpx;
+    background-color: #DFDFDF;
+    position: fixed;
+    left: 40rpx;
+    bottom: 40rpx;
+    border-radius: 40rpx;
+    background-image: url('../../assets/user.jpg');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50%;
 }

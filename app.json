@@ -1,9 +1,12 @@
 {
   "pages":[
+    "pages/newTopic/newTopic",
+    "pages/userInfo/userInfo",
     "pages/topics/topics",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"dark",

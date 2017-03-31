@@ -1,7 +1,8 @@
 //topics.js
 import * as services from '../../services/services';
-import {wxNavigateTo} from '../../utils/wxApi';
+import {wxNavigateTo,wxGetStorage} from '../../utils/wxApi';
 var util =  require('../../utils/util');
+var app = getApp()
 Page({
   data: {
     topics: [],
@@ -14,13 +15,28 @@ Page({
     {key: 'ask', value: '问答'},
     {key: 'job', value: '招聘'}],
     fetchMore: false,
-    nodata: false
+    nodata: false,
+    userInfo: null,
+    hasLogin: false,
+    userLoginImage: 'http://p0.meituan.net/shangchao/e7af34f830a74a9abac65828721cacfa.jpg'
   },
   plainData: {
     pullTimeStamp: Date.now()
   },
   onLoad: function () {
     this.fetchList(true)
+    this.fetchUserInfo()
+    console.log('topics onLoad')
+  },
+  fetchUserInfo () {
+    let userInfo = app.globalData.cnode_userInfo;
+  
+    if(userInfo) {
+      this.setData({
+        userInfo,
+        hasLogin: true
+      })
+    }
   },
   fetchList (reset) {
     let {pageIndex,activeTab,limit} = this.data;
@@ -33,6 +49,7 @@ Page({
         item.create_at = util.formatTime(new Date(item.create_at))
         return item
       })
+      console.log(res.data.data)
       if(reset) {
         this.setData({
           topics: res.data.data
@@ -98,7 +115,11 @@ Page({
        wx.hideLoading()
     })
   },
-  toLoginClick() {
-    
+  loginAvatarClick() {
+    if(!this.data.hasLogin) {
+      wxNavigateTo("../login/login")
+    } else {
+      wxNavigateTo("../userInfo/userInfo")
+    }
   }
 })

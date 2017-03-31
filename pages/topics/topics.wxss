@@ -52,9 +52,14 @@ page {
     display: flex;
     justify-content: space-around;
     background-color: #F0F0F0;
+   
 }
 .tab-item {
-    padding: 20rpx 10rpx;
+    height: 80rpx;
+    padding: 0 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
     color: #444;
     font-size: 35rpx;
 }
@@ -69,7 +74,7 @@ page {
     font-size: 30rpx;
     padding: 10rpx 0rpx;
 }
-.not-login {
+.login {
     width: 80rpx;
     height: 80rpx;
     background-color: #DFDFDF;
@@ -77,8 +82,9 @@ page {
     left: 40rpx;
     bottom: 40rpx;
     border-radius: 40rpx;
-    background-image: url('../../assets/user.jpg');
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-position: 50%;
+    overflow: hidden;
+}
+.login-avatar {
+   width: 80rpx;
+   height: 80rpx;  
 }

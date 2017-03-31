@@ -7,6 +7,7 @@
     <text>{{item.value}}</text>
   </view>
 </view>
+
 <view class="topics-page">
   <block wx:for="{{topics}}" wx:key="{{item.id}}">
     <view id="{{item.id}}" class="topic-item" data-artical-id="{{item.id}}" bindtap="itemClick">
@@ -29,4 +30,6 @@
 <view class="bottom-more" v-show="{{fetchMore}}">
  <text>加载更多......</text>
 </view>
-<view class="not-login"></view>
+<view class="login" bindtap="loginAvatarClick">
+<image class="login-avatar" src="{{userInfo.avatar_url || userLoginImage}}"></image>
+</view>

@@ -1,3 +1,5 @@
+import {wxGetStorage} from './utils/wxApi'
+
 //app.js
 App({
   onLaunch: function () {
@@ -5,6 +7,19 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+
+    wxGetStorage('cnode_userInfo').then(res=>{
+      if(res.data || res.data.success) {
+        this.globalData.cnode_userInfo = res.data;
+      }
+       console.log('cnode_userInfo')
+       console.log(res)
+    })
+    wxGetStorage('cnode_token').then(res=>{
+      this.globalData.cnode_token = res.data;
+      console.log('cnode_token')
+      console.log(res.data)
+    })
   },
   getUserInfo:function(cb){
     var that = this
@@ -25,6 +40,8 @@ App({
     }
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    cnode_token: null,
+    cnode_userInfo: null
   }
 })

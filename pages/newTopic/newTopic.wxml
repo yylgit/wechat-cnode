@@ -1,0 +1,18 @@
+<view class="new-topic-page">
+<picker bindchange="bindPickerChange" value="{{index}}" range-key="value" range="{{tab}}">
+    <view class="row">
+        <text class="label">板块:</text>
+        <view class="picker" hidden="{{index === -1}}">
+            {{tab[index].value}}
+        </view>
+        <view class="picker" hidden="{{index !== -1}}">
+            请选择板块
+        </view>
+        <view class="picker-icon">></view>
+    </view>
+</picker>
+<view class="row">
+    <view class="label">标题:</view>
+    <input placeholder-class="title-input"  placeholder="请输入标题"/>
+</view>
+</view>

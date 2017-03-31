@@ -16,6 +16,19 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function formatShortTime(date) {
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+
+
+  return [year, month, day].map(formatNumber).join('/')
+}
+
 function json2Form(json) {
   var str = [];
   for (var p in json) {
@@ -25,6 +38,7 @@ function json2Form(json) {
 }
 
 module.exports = {
-  formatTime: formatTime,
-  json2Form
+  formatTime,
+  json2Form,
+  formatShortTime
 }

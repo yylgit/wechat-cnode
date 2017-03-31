@@ -14,9 +14,18 @@
   display: table;
   visibility: hidden;
   clear: both;
+  
   height: 0px;
 }
 
 .ml20 {
     margin-left: 20rpx;
+}
+
+view,page,text {
+   box-sizing: border-box;
+}
+
+page, .page-container {
+ height: 100%
 }

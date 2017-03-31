@@ -1,5 +1,0 @@
-.login {
-    width: 100rpx;
-    height: 100rpx;
-    background-color: red;
-}

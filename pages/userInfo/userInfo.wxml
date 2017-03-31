@@ -1,0 +1,57 @@
+<view class="page-container">
+    <view class="top-wrap">
+        <image bindtap="editClick" class="edit-icon" src="{{editIcon}}"></image>
+        <view class="user">
+            <image class="user-avatar" src="{{userInfo.avatar_url}}"></image>
+        </view>      
+        <text class="login-name">{{userInfo.loginname}}</text>   
+        <image class="setup-icon" src="{{setUpIcon}}"></image>
+        <text class="create-time">创建时间：{{userInfo.create_at}}</text>   
+        <text class="score">积分：{{userInfo.score}}</text> 
+    </view>
+    <view class="tab-wrap">
+        <view 
+            class="{{item.key === activeTab ? 'tab-item active' : 'tab-item'}}"
+            data-tab="{{item.key}}"
+            bindtap="tabClick"
+            wx:for="{{tabList}}" wx:key="{{item.key}}">
+            <text>{{item.value}}</text>
+        </view>
+    </view>
+    <scroll-view hidden="{{activeTab !== 'topics'}}" style="height: {{scrollViewHeight}}" class="topics-page">
+    <block wx:for="{{userInfo.recent_topics}}" wx:key="{{item.id}}">
+        <view id="{{item.id}}" class="topic-item" data-artical-id="{{item.id}}" bindtap="itemClick">
+        <view class="item-left">
+            <image class="avatar-img" src="{{item.author.avatar_url}}"></image>
+        </view>
+        <view class="item-right">
+            <view>
+            <text class="item-title-text">{{item.title}}</text>
+            </view>
+            <view class="bottom-text clearfix">
+            <text class="author-name">{{item.author.loginname}}</text>
+            <text class="create_time">{{item.last_reply_at}}</text>
+            </view>
+        </view>
+        </view>
+    </block>
+    </scroll-view>
+    <scroll-view hidden="{{activeTab !== 'replies'}}" style="height: {{scrollViewHeight}}" class="topics-page">
+    <block wx:for="{{userInfo.recent_replies}}" wx:key="{{item.id}}">
+        <view id="{{item.id}}" class="topic-item" data-artical-id="{{item.id}}" bindtap="itemClick">
+        <view class="item-left">
+            <image class="avatar-img" src="{{item.author.avatar_url}}"></image>
+        </view>
+        <view class="item-right">
+            <view>
+            <text class="item-title-text">{{item.title}}</text>
+            </view>
+            <view class="bottom-text clearfix">
+            <text class="author-name">{{item.author.loginname}}</text>
+            <text class="create_time">{{item.last_reply_at}}</text>
+            </view>
+        </view>
+        </view>
+    </block>
+    </scroll-view>
+</view>

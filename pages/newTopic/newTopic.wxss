@@ -1,0 +1,34 @@
+.new-topic-page {
+    padding-top: 30rpx;
+}
+.row {
+    display: flex;
+    border-bottom: 1rpx solid #f0f0f0;
+    padding: 15rpx 0;
+    font-size: 30rpx;
+    color:lightslategrey;
+}
+.label {
+    width: 100rpx;
+    display: flex;
+    margin-left: 50rpx;
+    align-items: center;
+}
+.picker {
+    display: inline-block;
+}
+.picker-wrap {
+    display: flex;
+    border-bottom: 1rpx solid #f0f0f0;
+    padding: 20rpx 0;
+}
+.picker-icon {
+    position: absolute;
+    right: 20rpx;
+}
+.title-input {
+    height: 30rpx;
+    font-size: 30rpx;
+    color:lightslategrey;
+    margin-top: 2rpx;
+}

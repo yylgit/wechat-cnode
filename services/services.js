@@ -12,3 +12,13 @@ export function getArtical (id) {
     let url = host + '/topic/'+id;
     return get(url)
 }
+
+export function getUserInfo (accesstoken) {
+    let url = host + '/accesstoken';
+    return post(url,{accesstoken})
+}
+
+export function getUserInfoDetail (loginname) {
+    let url = host + '/user/'+loginname;
+    return get(url)
+}

@@ -1,8 +1,8 @@
 <view class="login-page">
-    <view class="label">
+    <view class="introduce">
         <text>国内最专业的Node.js开源技术社区</text>
     </view>
-    <view class="login">
-        <button type="primary" bindtap="scan">扫码登陆</button>
+    <view class="login-button">
+        <button type="primary" bindtap="scanClick">扫码登陆</button>
     </view>
 </view>

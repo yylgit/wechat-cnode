@@ -4,9 +4,10 @@
 .row {
     display: flex;
     border-bottom: 1rpx solid #f0f0f0;
-    padding: 15rpx 0;
+    height: 80rpx;
     font-size: 30rpx;
     color:lightslategrey;
+    align-items: center;
 }
 .label {
     width: 100rpx;
@@ -26,9 +27,38 @@
     position: absolute;
     right: 20rpx;
 }
-.title-input {
+.title-input-place {
     height: 30rpx;
     font-size: 30rpx;
     color:lightslategrey;
     margin-top: 2rpx;
+}
+.title-input {
+    flex: 1
+}
+.textarea-placeholder {
+     font-size: 30rpx;
+     color:lightslategrey;
+}
+.text-content {
+  
+    width: 100%;
+}
+.textarea-wrap {
+    padding: 20rpx;
+}
+
+.submit-btn {
+    height: 60rpx;
+    width: 90%;
+}
+.btn-wrap {
+    position: fixed;
+    bottom: 0px;
+    height: 100rpx;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #f0f0f0;
 }

@@ -2,7 +2,7 @@
 <picker bindchange="bindPickerChange" value="{{index}}" range-key="value" range="{{tab}}">
     <view class="row">
         <text class="label">板块:</text>
-        <view class="picker" hidden="{{index === -1}}">
+        <view class="picker value" hidden="{{index === -1}}">
             {{tab[index].value}}
         </view>
         <view class="picker" hidden="{{index !== -1}}">
@@ -13,13 +13,22 @@
 </picker>
 <view class="row">
     <view class="label">标题:</view>
-    <input class="title-input"  placeholder-class="title-input-place"  placeholder="请输入标题"/>
+    <input 
+    class="title-input"
+    bindinput="titleInputChange"   
+    placeholder-class="title-input-place"  
+    placeholder="请输入标题"/>
 </view>
 <view class="textarea-wrap">
-<textarea style="height: {{textareaHeight}}" class="text-content" placeholder-class="textarea-placeholder"  placeholder="请在此处输入帖子内容..." />
+<textarea 
+    style="height: {{textareaHeight}}"
+    bindinput="contentInputChange"
+    class="text-content" 
+    placeholder-class="textarea-placeholder"  
+    placeholder="请在此处输入帖子内容..." />
 </view>
 
 <view class="btn-wrap">
-<button type="primary" size="mini" class="submit-btn">发表</button>
+<button loading="{{submiting}}"  bindtap="submitClick" type="primary" size="mini" class="submit-btn">发表</button>
 </view>
 </view>

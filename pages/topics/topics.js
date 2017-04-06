@@ -1,7 +1,7 @@
 //topics.js
 import * as services from '../../services/services';
 import {wxNavigateTo,wxGetStorage} from '../../utils/wxApi';
-var util =  require('../../utils/util');
+import * as util from'../../utils/util';
 var app = getApp()
 Page({
   data: {
@@ -23,10 +23,12 @@ Page({
   plainData: {
     pullTimeStamp: Date.now()
   },
-  onLoad: function () {
+  onLoad() {
     this.fetchList(true)
-    this.fetchUserInfo()
     console.log('topics onLoad')
+  },
+  onShow() {
+    this.fetchUserInfo()
   },
   fetchUserInfo () {
     let userInfo = app.globalData.cnode_userInfo;
@@ -35,6 +37,11 @@ Page({
       this.setData({
         userInfo,
         hasLogin: true
+      })
+    } else {
+      this.setData({
+        userInfo: null,
+        hasLogin: false
       })
     }
   },
@@ -49,7 +56,6 @@ Page({
         item.create_at = util.formatTime(new Date(item.create_at))
         return item
       })
-      console.log(res.data.data)
       if(reset) {
         this.setData({
           topics: res.data.data
@@ -68,18 +74,21 @@ Page({
     .then(()=>{})
     .catch(()=>{})
   },
-  
+  //  "enablePullDownRefresh": true, 
   onPullDownRefresh(e) {
+    // wx.showLoading({title: '正在加载'})
     this.plainData.pullTimeStamp = Date.now()
-    this.fetchList(true).then(()=>{
+    this.fetchList(true).finally(()=>{
       let time = Date.now()
       let delayTime = Date.now() - this.plainData.pullTimeStamp;
       let leftTime = 1000 - delayTime;
       if(leftTime > 0) {
           setTimeout(()=>{
             wx.stopPullDownRefresh();
+            // wx.hideLoading()
           },leftTime)
       }
+      
     })
   },
   onReachBottom: function () {  

@@ -11,3 +11,33 @@
     font-size: 20rpx;
     color: lightgray;
 }
+.content {
+    margin-bottom: 80rpx;
+}
+.bottom-wrap {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+   
+   
+    background-color: #fff;
+    border-top: 1px solid #f0f0f0;
+    /*border-top: 1px solid #7c7c7c;*/
+}
+.bottom-item {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    color: #7c7c7c;
+    font-size: 25rpx;
+}
+.icon {
+    height: 40rpx;
+    width: 40rpx;
+}
+.item-text {
+    margin-left: 5rpx;
+}

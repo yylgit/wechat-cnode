@@ -17,7 +17,9 @@ Page({
                     console.log(res.data)
                     wx.setStorageSync('cnode_userInfo', res.data)
                     wx.hideLoading()
-                    wxRedirectTo('../topics/topics')
+                    wx.navigateBack({
+                      delta: 1, // 回退前 delta(默认为1) 页面
+                    })
                 }).catch(()=>{
 
                 })

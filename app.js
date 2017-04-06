@@ -42,6 +42,7 @@ App({
   globalData:{
     userInfo:null,
     cnode_token: null,
-    cnode_userInfo: null
+    cnode_userInfo: null,
+    isSubmitTopic: false //是否发表文章
   }
 })

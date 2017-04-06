@@ -18,6 +18,10 @@
 .picker {
     display: inline-block;
 }
+
+.picker.value {
+    color: #000;
+}
 .picker-wrap {
     display: flex;
     border-bottom: 1rpx solid #f0f0f0;
@@ -34,15 +38,16 @@
     margin-top: 2rpx;
 }
 .title-input {
-    flex: 1
+    flex: 1;
+    color: #000;
 }
 .textarea-placeholder {
      font-size: 30rpx;
      color:lightslategrey;
 }
 .text-content {
-  
     width: 100%;
+    color: #000;
 }
 .textarea-wrap {
     padding: 20rpx;

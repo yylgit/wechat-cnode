@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    color: #DFDFDF;
+    color: #fff;
     font-size: 25rpx;
 }
 .edit-icon {
@@ -116,5 +116,5 @@
 }
 
 .topics-page {
-    padding-top: 20rpx;
+    padding-top: 20rpx; 
 }

@@ -1,5 +1,5 @@
 var Promise = require('../plugins/es6-promise.js')
-var util = require('./util')
+import * as util from'./util'
 function wxPromisify(fn) {
   return function (obj = {}) {
     return new Promise((resolve, reject) => {
@@ -40,7 +40,7 @@ function wxGetUserInfo() {
  * 获取系统信息
  */
 function wxGetSystemInfo() {
-  return wxPromisify(wx.getSystemInfo)
+  return wxPromisify(wx.getSystemInfo)()
 }
 
 

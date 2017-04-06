@@ -1,8 +1,21 @@
+/*
+页面背景色  #e2e2e2;
+一级菜单背景色 #F0F0F0
+菜单激活绿色 #6EB600
+灰色字颜色  #f0f0f0
+灰色边框颜色 #f0f0f0
+深灰色字体颜色 #7c7c7c
+*/
 page {
     height: 100%;
 }
 .topics-page {
     padding-top: 20rpx;
+    /*margin-top: 80rpx; */
+}
+.top-margin {
+    height: 100rpx;
+    background-color: #E2E2E2;
 }
 .avatar-img {
     width: 80rpx;
@@ -51,16 +64,24 @@ page {
 .tab-wrap {
     display: flex;
     justify-content: space-around;
-    background-color: #F0F0F0;
-   
+    background-color: #F0F0F0;  
 }
+.fixed-tab {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #F0F0F0;  
+}
+
 .tab-item {
     height: 80rpx;
-    padding: 0 20rpx;
+    flex: 1;
     display: flex;
-    flex-direction: column;
     justify-content:center;
-    color: #444;
+    align-items: center;
+    color: #7c7c7c;
     font-size: 35rpx;
 }
 .tab-item.active {
@@ -83,6 +104,9 @@ page {
     bottom: 40rpx;
     border-radius: 40rpx;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .login-avatar {
    width: 80rpx;

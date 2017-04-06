@@ -15,8 +15,31 @@
         <text class="ml20">
         {{artical.author.loginname}}
         </text>
+        <text class="ml20">
+        {{artical.author.loginname}}
+        </text>
     </view>
     <view class="content">
         <template is="html-view" data="{{data: html}}" />
+    </view>
+</view>
+<view class="bottom-wrap">
+    <view class="bottom-item">
+        <image 
+            bindtap="collectClick"
+            wx:if="{{actical.is_collect}}" 
+            class="icon" 
+            src="../../assets/collect.gif">
+        </image>
+        <image 
+            bindtap="notCollectClick"
+            wx:else  
+            class="icon" 
+            src="../../assets/not_collect.gif">
+        </image>
+    </view>
+    <view class="bottom-item">
+        <image class="icon" src="../../assets/message.gif"></image>
+        <text class="item-text">{{artical.reply_count}}</text>
     </view>
 </view>

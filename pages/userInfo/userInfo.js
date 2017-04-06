@@ -1,11 +1,9 @@
 import * as services from '../../services/services';
 import {wxRedirectTo,wxGetSystemInfo,wxNavigateTo} from '../../utils/wxApi';
-import {formatShortTime} from '../../utils/util';
+import {formatShortTime, genColor} from '../../utils/util';
 var app = getApp()
 Page({
     data: {
-        editIcon: 'http://dn-cnode.qbox.me/FnxmEholmxOeqkEuPXrBK8Mkb8a4',
-        setUpIcon: 'http://dn-cnode.qbox.me/FskVMbTkcRYxUFF-EjtSTFv5Vhli',
         userInfo: null,
         tabList: [{
             key: 'topics', value: '最近发布'
@@ -13,11 +11,30 @@ Page({
             key: 'replies', value: '最近回复'
         }],
         activeTab: 'topics',
-        scrollViewHeight: '0rpx'
+        scrollViewHeight: '0rpx',
+        bgColor: '#E74C3C'
+    },
+    onShow() {
+        if(app.globalData.isSubmitTopic) {
+            app.globalData.isSubmitTopic = false;
+            this.fetchData();
+            wx.showToast({
+                title: '发表成功',
+                icon: 'success',
+                duration: 2000
+            })
+        }
+       
     },
     onLoad: function () {
+        let color = genColor()
+        this.setData({
+            bgColor: color
+        })
+        this.fetchData(); 
+    },
+    fetchData() {
         let userInfo = app.globalData.cnode_userInfo;
-        console.log(userInfo)
         if(userInfo) {
            services.getUserInfoDetail(userInfo.loginname).then(res=>{
                 res.data.data.create_at = 
@@ -29,10 +46,10 @@ Page({
         } else {
             wxRedirectTo('../login/login')
         }
-        wxGetSystemInfo()().then(data=>{
-            console.log(data)
-            let {screenHeight,pixelRatio} = data;
-            let rpxHeight = screenHeight * pixelRatio;
+        wxGetSystemInfo().then(data=>{
+            let {screenHeight,screenWidth, pixelRatio} = data;
+            console.log('screenHeight:'+screenHeight)
+            let rpxHeight = screenHeight / screenWidth * 750;
             let scrollViewHeight = rpxHeight - 380;
             this.setData({
                 scrollViewHeight: scrollViewHeight + 'rpx'
@@ -52,5 +69,8 @@ Page({
     },
     editClick (e) {
          wxNavigateTo("../newTopic/newTopic")
+    },
+    gotoSetupClick () {
+         wxNavigateTo("../setup/setup")
     }
 })

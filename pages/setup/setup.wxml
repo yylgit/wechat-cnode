@@ -1,0 +1,11 @@
+<view class="setup-page">
+<view bindtap="aboutMeClick" class="row first-row">
+     <text>关于</text>
+</view>
+<view bindtap="clearCacheClick" class="row">
+     <text>清除缓存</text>
+</view>
+<view bindtap="logoutClick" class="row">
+     <text>退出登陆</text>
+</view>
+</view>

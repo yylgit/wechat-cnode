@@ -1,8 +1,9 @@
 //topics.js
 import * as services from '../../services/services.js'
-var util =  require('../../utils/util');
+import * as util from'../../utils/util';
 // 引入HtmlParser
 const HtmlParser = require('../../html-view/index')
+const app = getApp();
 Page({
   data: {
     articalId: '5433d5e4e737cbe96dcef312',
@@ -19,7 +20,14 @@ Page({
         artical: res.data.data,
         html
       }) 
+      console.log(this.data.artical)
       
     })
+  },
+  collectClick () {
+
+  },
+  notCollectClick () {
+    
   }
 })

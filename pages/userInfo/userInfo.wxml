@@ -1,11 +1,11 @@
 <view class="page-container">
-    <view class="top-wrap">
-        <image bindtap="editClick" class="edit-icon" src="{{editIcon}}"></image>
+    <view class="top-wrap"  style="background-color: {{bgColor}}">
+        <image bindtap="editClick" class="edit-icon" src="../../assets/edit.gif"></image>
         <view class="user">
             <image class="user-avatar" src="{{userInfo.avatar_url}}"></image>
         </view>      
         <text class="login-name">{{userInfo.loginname}}</text>   
-        <image class="setup-icon" src="{{setUpIcon}}"></image>
+        <image bindtap="gotoSetupClick" class="setup-icon" src="../../assets/setting.gif"></image>
         <text class="create-time">创建时间：{{userInfo.create_at}}</text>   
         <text class="score">积分：{{userInfo.score}}</text> 
     </view>

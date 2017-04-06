@@ -1,8 +1,18 @@
 <view class="login-page">
+    <view class="logo-wrap">
+    <image 
+    class="logo-img"
+            src="https://o4j806krb.qnssl.com/public/images/cnodejs_light.svg"></image>
+    </view>
     <view class="introduce">
         <text>国内最专业的Node.js开源技术社区</text>
     </view>
+    <view class="tip">
+        <text>登陆CNode社区-->设置-->下方Access Token二维码</text>
+    </view>
+    
+    
     <view class="login-button">
-        <button type="primary" bindtap="scanClick">扫码登陆</button>
+        <button type="primary" bindtap="scanClick">扫码登录</button>
     </view>
 </view>

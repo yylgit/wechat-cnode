@@ -1,12 +1,14 @@
 {
   "pages":[
+    "pages/topics/topics",
+    "pages/setup/setup",
+    "pages/topics/topics",
     "pages/newTopic/newTopic",
     "pages/userInfo/userInfo",
-    "pages/topics/topics",
     "pages/index/index",
     "pages/logs/logs",
     "pages/detail/detail",
-    "pages/login/login"
+     "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"dark",

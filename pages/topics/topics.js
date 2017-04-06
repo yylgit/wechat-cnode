@@ -18,7 +18,7 @@ Page({
     nodata: false,
     userInfo: null,
     hasLogin: false,
-    userLoginImage: 'http://p0.meituan.net/shangchao/e7af34f830a74a9abac65828721cacfa.jpg'
+    userLoginImage: '../../assets/user.jpg'
   },
   plainData: {
     pullTimeStamp: Date.now()
@@ -32,7 +32,7 @@ Page({
   },
   fetchUserInfo () {
     let userInfo = app.globalData.cnode_userInfo;
-  
+    console.log(userInfo)
     if(userInfo) {
       this.setData({
         userInfo,

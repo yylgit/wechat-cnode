@@ -35,6 +35,7 @@ Page({
     },
     fetchData() {
         let userInfo = app.globalData.cnode_userInfo;
+        console.log(userInfo)
         if(userInfo) {
            services.getUserInfoDetail(userInfo.loginname).then(res=>{
                 res.data.data.create_at = 

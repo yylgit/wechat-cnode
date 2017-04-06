@@ -1,12 +1,13 @@
 //topics.js
 import * as services from '../../services/services.js'
 import * as util from'../../utils/util';
+import {wxNavigateTo} from '../../utils/wxApi'
 // 引入HtmlParser
 const HtmlParser = require('../../html-view/index')
-const app = getApp();
+var app = getApp();
 Page({
   data: {
-    articalId: '5433d5e4e737cbe96dcef312',
+    articalId: '',
     artical: {},
     html: null,
     bgColor: ''
@@ -17,8 +18,8 @@ Page({
     this.setData({
         bgColor: color
     })
-
     let {articalId} = options;
+    console.log(articalId)
     services.getArtical(articalId).then(res=>{
       console.log(res.data.data)
       // 解析HTML字符串
@@ -32,9 +33,54 @@ Page({
     })
   },
   collectClick () {
-
+    if(app.getAccessToken()) {
+      services.notCollectTopic(app.getAccessToken(), this.data.artical.id)
+      .then(res=>{
+        if(res.data.success) {
+          wx.showToast({
+            title: '取消收藏成功！'
+          })
+          this.setData({
+            artical: Object.assign(this.data.artical,{is_collect: false})
+          })
+        } else {
+          throw new Error(res.data.error_msg || '取消收藏失败！')
+        }
+       
+      }).catch((err)=>{
+        wx.showToast({
+          title: err.toString(),
+          image:"../../assets/white_error.gif"
+        })
+      })
+    }
   },
   notCollectClick () {
-    
+    if(app.getAccessToken()) {
+      services.collectTopic(app.getAccessToken(), this.data.artical.id)
+      .then(res=>{
+         if(res.data.success) {
+            wx.showToast({
+              title: '收藏成功！'
+            })
+            this.setData({
+              artical: Object.assign(this.data.artical,{is_collect: true})
+            })
+         } else {
+           throw new Error(res.data.error_msg || '收藏失败')
+         }
+        
+      }).catch((err)=>{
+        wx.showToast({
+          title: err.toString(),
+          image:"../../assets/white_error.gif"
+        })
+      })
+    }
+  },
+  gotoReplyClick () {
+    wxNavigateTo('../../replay/reply',{
+      articalId: this.data.artical.id
+    })
   }
 })

@@ -57,12 +57,13 @@
 
 .tab-item {
     flex: 1;
-    height: 80rpx;
+    height: 90rpx;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #444;
     font-size: 35rpx;
+    border-bottom: 6rpx solid #F0F0F0;
 }
 .tab-item.active {
     color: #6EB600;

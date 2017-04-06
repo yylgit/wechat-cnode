@@ -1,0 +1,4 @@
+<view class="reply-item">
+    <view class="reply-left"></view>
+    <view class="reply-right"></view>
+</view>

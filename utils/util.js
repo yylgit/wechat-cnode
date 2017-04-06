@@ -1,3 +1,4 @@
+
 export function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -53,3 +54,9 @@ export function getRandomNum(Min, Max) {
 export function genColor() {
 	return colors[getRandomNum(0, colors.length - 1)];
 }
+
+
+export function getAccessToken() {
+  
+}
+

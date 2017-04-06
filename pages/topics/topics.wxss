@@ -14,7 +14,7 @@ page {
     /*margin-top: 80rpx; */
 }
 .top-margin {
-    height: 100rpx;
+    height: 110rpx;
     background-color: #E2E2E2;
 }
 .avatar-img {
@@ -76,13 +76,14 @@ page {
 }
 
 .tab-item {
-    height: 80rpx;
+    height: 90rpx;
     flex: 1;
     display: flex;
     justify-content:center;
     align-items: center;
     color: #7c7c7c;
     font-size: 35rpx;
+    border-bottom: 6rpx solid #F0F0F0;
 }
 .tab-item.active {
     color: #6EB600;

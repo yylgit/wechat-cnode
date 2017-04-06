@@ -2,11 +2,8 @@
   "pages":[
     "pages/topics/topics",
     "pages/setup/setup",
-    "pages/topics/topics",
     "pages/newTopic/newTopic",
     "pages/userInfo/userInfo",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/detail/detail",
      "pages/login/login"
   ],

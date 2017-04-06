@@ -45,7 +45,7 @@ export function collectTopic (accesstoken,topic_id) {
         topic_id
     })
 }
-//收藏主题
+//取消收藏主题
 export function notCollectTopic (accesstoken,topic_id) {
     let url = host + '/topic_collect/de_collect';
     return post(url,{

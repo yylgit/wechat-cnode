@@ -8,9 +8,16 @@ Page({
   data: {
     articalId: '5433d5e4e737cbe96dcef312',
     artical: {},
-    html: null
+    html: null,
+    bgColor: ''
   },
+
   onLoad: function (options) {
+    let color = util.genColor()
+    this.setData({
+        bgColor: color
+    })
+
     let {articalId} = options;
     services.getArtical(articalId).then(res=>{
       console.log(res.data.data)

@@ -1,23 +1,19 @@
 <import src="../../html-view/index.wxml" />
 <view class="detail-page">
-    <view class="detail-title">
-        <text>
-        {{artical.title}}
-        </text>
-    </view>
-    <view class="subtitle">
-        <text>
-        {{artical.tab}}
-        </text>
-        <text class="ml20">
-        {{artical.create_at}}
-        </text>
-        <text class="ml20">
-        {{artical.author.loginname}}
-        </text>
-        <text class="ml20">
-        {{artical.author.loginname}}
-        </text>
+    <view class="topic-item" style="background-color: {{bgColor}}">
+      <view class="item-left">
+        <image class="avatar-img" src="{{artical.author.avatar_url}}"></image>
+      </view>
+      <view class="item-right">
+        <view>
+          <text class="item-title-text">{{artical.title}}</text>
+        </view>
+        <view class="bottom-text clearfix">
+          <text class="author-name">{{artical.author.loginname}}</text>
+          <text class="create_time">{{artical.create_at}}</text>
+          <text class="count-text">{{artical.reply_count}}/{{artical.visit_count}}              </text>
+        </view>
+      </view>
     </view>
     <view class="content">
         <template is="html-view" data="{{data: html}}" />
@@ -27,7 +23,7 @@
     <view class="bottom-item">
         <image 
             bindtap="collectClick"
-            wx:if="{{actical.is_collect}}" 
+            wx:if="{{artical.is_collect}}" 
             class="icon" 
             src="../../assets/collect.gif">
         </image>
@@ -40,6 +36,6 @@
     </view>
     <view class="bottom-item">
         <image class="icon" src="../../assets/message.gif"></image>
-        <text class="item-text">{{artical.reply_count}}</text>
+        <text class="message-count">{{artical.reply_count}}</text>
     </view>
 </view>

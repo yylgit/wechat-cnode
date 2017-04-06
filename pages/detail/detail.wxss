@@ -1,18 +1,10 @@
 @import '../../html-view/index.wxss';
 
-.detail-page {
-    padding: 0rpx 20rpx;
-}
-.subtitle {
-    display: flex;
-    flex-direction: row;
-}
-.subtitle text {
-    font-size: 20rpx;
-    color: lightgray;
-}
+
+
 .content {
     margin-bottom: 80rpx;
+    padding: 0rpx 20rpx;
 }
 .bottom-wrap {
     position: fixed;
@@ -20,8 +12,6 @@
     width: 100%;
     height: 80rpx;
     display: flex;
-   
-   
     background-color: #fff;
     border-top: 1px solid #f0f0f0;
     /*border-top: 1px solid #7c7c7c;*/
@@ -38,6 +28,49 @@
     height: 40rpx;
     width: 40rpx;
 }
-.item-text {
+.message-count {
     margin-left: 5rpx;
+}
+
+.avatar-img {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 5rpx;
+}
+.topic-item {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1rpx solid #f0f0f0;
+    padding: 20rpx;
+    color: #fff;
+}
+.topic-item .item-left {
+  width: 100rpx;
+  overflow: hidden;
+}
+
+.item-right {
+  width: 650rpx;
+}
+.author-name,.create_time,.count-text  {
+    font-size: 20rpx;
+    float: left;
+}
+.count-text  {
+   float: right;
+}
+.bottom-text {
+    margin-top: 20rpx;
+}
+
+.item-right {
+ padding-right: 20rpx;
+}
+
+.item-title-text {
+    font-size: 30rpx;
+    font-weight: bold;
+}
+.create_time {
+    margin-left: 10rpx;
 }

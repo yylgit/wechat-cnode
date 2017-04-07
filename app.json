@@ -1,11 +1,13 @@
 {
   "pages":[
+    "pages/reply/reply",
     "pages/topics/topics",
     "pages/setup/setup",
     "pages/newTopic/newTopic",
     "pages/userInfo/userInfo",
     "pages/detail/detail",
-     "pages/login/login"
+    "pages/login/login"
+    
   ],
   "window":{
     "backgroundTextStyle":"dark",

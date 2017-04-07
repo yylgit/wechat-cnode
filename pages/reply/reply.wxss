@@ -1,0 +1,52 @@
+.reply-list {
+    padding-top: 20rpx;
+}
+.reply-item {
+    display:flex;
+    flex-direction:row;
+    border-bottom:1rpx solid #f0f0f0;
+    margin-left:20rpx;
+    margin-bottom:20rpx;
+    padding-bottom:20rpx;
+    font-size: 25rpx;
+    color: #747474;
+}
+
+.reply-left {
+    width: 100rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reply-right {
+    width: 650rpx;
+    padding-left: 10rpx;
+    padding-right: 20rpx;
+}
+
+.reply-content {  
+    font-size: 30rpx;
+    line-height: 36rpx;
+    color: #000;
+    margin: 20rpx 0rpx;
+}
+.avatar {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+}
+.lou-ceng {
+    margin-top: 15rpx;
+}
+.author-name {
+    float: left;
+}
+.create-time {
+    float: right;
+}
+
+.thumbs-up {
+    width: 30rpx;
+    height: 30rpx;
+}

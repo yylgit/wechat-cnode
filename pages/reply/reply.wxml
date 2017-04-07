@@ -1,4 +1,23 @@
-<view class="reply-item">
-    <view class="reply-left"></view>
-    <view class="reply-right"></view>
+<import src="../../html-view/index.wxml" />
+<view class="reply-list">
+    <view wx:for="{{replies}}" wx:key="{{item.id}}" class="reply-item">
+        <view class="reply-left">
+        <image class="avatar" src="{{item.author.avatar_url}}"></image>
+            <text class="lou-ceng">{{index}} 楼</text>
+        </view>
+        <view class="reply-right">
+            <view class="clearfix">
+                <text class="author-name">{{item.author.loginname}}</text>
+                <text class="create-time">{{item.create_at}}</text>
+            </view>
+            <view class="reply-content">
+                <template is="html-view" data="{{data: item.html}}" />
+            </view>
+            <view class="clearfix">
+                <image class="thumbs-up" src="../../assets/thumbs_up.gif"></image>
+                <image class="thumbs-up" src="../../assets/thumbs_up_active.gif"></image>
+                <text>评论</text>
+            </view>
+        </view>
+    </view>
 </view>

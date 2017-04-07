@@ -34,8 +34,8 @@
             src="../../assets/not_collect.gif">
         </image>
     </view>
-    <view class="bottom-item">
-        <image class="icon" src="../../assets/message.gif"></image>
-        <text class="message-count">{{artical.reply_count}}</text>
+    <view class="bottom-item" >
+        <image class="icon" bindtap="gotoReplyClick" src="../../assets/message.gif"></image>
+        <text class="message-count" bindtap="gotoReplyClick" >{{artical.reply_count}}</text>
     </view>
 </view>

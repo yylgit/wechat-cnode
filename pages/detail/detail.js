@@ -79,7 +79,8 @@ Page({
     }
   },
   gotoReplyClick () {
-    wxNavigateTo('../../replay/reply',{
+    console.log('gotoReplyClick')
+    wxNavigateTo('../reply/reply',{
       articalId: this.data.artical.id
     })
   }

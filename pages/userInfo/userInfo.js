@@ -8,11 +8,14 @@ Page({
         tabList: [{
             key: 'topics', value: '最近发布'
         },{
-            key: 'replies', value: '最近回复'
+            key: 'replies', value: '最近评论'
+        },{
+            key: 'collects', value: '我的收藏'
         }],
         activeTab: 'topics',
         scrollViewHeight: '0rpx',
-        bgColor: '#E74C3C'
+        bgColor: '#E74C3C',
+        collectList: []
     },
     onShow() {
         if(app.globalData.isSubmitTopic) {
@@ -32,12 +35,29 @@ Page({
             bgColor: color
         })
         this.fetchData(); 
+        this.fetchCollect();
+    },
+    fetchCollect() {
+        let userInfo = app.globalData.cnode_userInfo;
+        if(userInfo) {
+            let loginname = userInfo.loginname;
+            services.collectList(loginname).then(res=>{
+                if(res.data.success) {
+                    this.setData({
+                        collectList: res.data.data
+                    })
+                }
+                
+            })  
+        }
+       
+       
     },
     fetchData() {
         let userInfo = app.globalData.cnode_userInfo;
         console.log(userInfo)
         if(userInfo) {
-           services.getUserInfoDetail(userInfo.loginname).then(res=>{
+            services.getUserInfoDetail(userInfo.loginname).then(res=>{
                 res.data.data.create_at = 
                 formatShortTime(new Date(res.data.data.create_at))
                 this.setData({

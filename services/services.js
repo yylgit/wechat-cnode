@@ -79,3 +79,8 @@ export function newReply (accesstoken,content,topic_id,reply_id) {
     }
     return post(url,params)
 }
+
+export function collectList(loginname) {
+    let url = host + '/topic_collect/' + loginname
+    return get(url)
+}

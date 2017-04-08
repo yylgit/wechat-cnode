@@ -6,6 +6,6 @@
      <text>清除缓存</text>
 </view>
 <view bindtap="logoutClick" class="row">
-     <text>退出登陆</text>
+     <text>退出登录</text>
 </view>
 </view>

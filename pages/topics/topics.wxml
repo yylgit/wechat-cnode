@@ -45,8 +45,8 @@
 </view>
 
 <view class="login" bindtap="loginAvatarClick">
-<image class="login-avatar" wx:if="hasLogin" src="{{ userInfo.avatar_url}}"></image>
-<image wx:else class="login-avatar" src="{{ userLoginImage}}"></image>
+<image class="login-avatar" wx:if="{{hasLogin}}" src="{{ userInfo.avatar_url}}"></image>
+<image wx:else class="login-avatar" src="../../assets/user.jpg"></image>
 </view>
 <!--<view class="envelope" bindtap="envelopeClick">
 <image class="envelope-image" src="../../assets/envelope.gif"></image>

@@ -17,8 +17,7 @@ Page({
     fetchMore: false,
     nodata: false,
     userInfo: null,
-    hasLogin: false,
-    userLoginImage: '../../assets/user.jpg'
+    hasLogin: false
   },
   tabMap: {
     'share': '分享',
@@ -146,6 +145,6 @@ Page({
     }
   },
   envelopeClick () {
-    
+
   }
 })

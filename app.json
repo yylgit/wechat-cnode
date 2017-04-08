@@ -6,7 +6,8 @@
     "pages/newTopic/newTopic",
     "pages/userInfo/userInfo",
     "pages/detail/detail",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/newReply/newReply"
     
   ],
   "window":{

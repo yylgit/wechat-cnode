@@ -1,0 +1,9 @@
+<view class="reply-page">
+    <textarea 
+        bindinput="contentChange"
+        class="reply-content" 
+        placeholder="发表评论..." />
+</view>
+<view class="btn-wrap">
+    <button loading="{{submiting}}"  bindtap="submitClick" type="primary" size="mini" class="submit-btn">发表</button>
+</view>

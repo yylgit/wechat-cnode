@@ -28,7 +28,7 @@ page {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5rpx;
+    border-radius: 10rpx;
     margin-bottom: 40rpx;
 }
 .logo-img {

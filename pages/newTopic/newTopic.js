@@ -57,18 +57,11 @@ Page({
              })
              return;
         }
-        if(!app.globalData.cnode_token) {
-            wx.showModal({
-                title: '请先登录',
-                showCancel: false,
-                success: function () {
-                    wxRedirectTo('../login/login')
-                }
-            })
+        if(!app.getAccessToken()) {
             return;
         }
         let body = {
-            accesstoken: app.globalData.cnode_token,
+            accesstoken: app.getAccessToken(),
             title: this.data.title,
             content:  this.data.content,
             tab: this.data.tab[this.data.index].key

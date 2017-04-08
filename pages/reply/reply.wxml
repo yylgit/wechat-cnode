@@ -3,7 +3,7 @@
     <view wx:for="{{replies}}" wx:key="{{item.id}}" class="reply-item">
         <view class="reply-left">
         <image class="avatar" src="{{item.author.avatar_url}}"></image>
-            <text class="lou-ceng">{{index}} 楼</text>
+            <view class="lou-ceng">{{replies.length - index}} 楼</view>
         </view>
         <view class="reply-right">
             <view class="clearfix">
@@ -14,10 +14,26 @@
                 <template is="html-view" data="{{data: item.html}}" />
             </view>
             <view class="clearfix">
-                <image class="thumbs-up" src="../../assets/thumbs_up.gif"></image>
-                <image class="thumbs-up" src="../../assets/thumbs_up_active.gif"></image>
-                <text>评论</text>
+                <view class="thumbs-up-wrap">
+                    <image 
+                    bindtap="upreplyClick" 
+                    data-index="{{index}}"
+                    data-reply-id="{{item.id}}" 
+                    wx:if="{{!item.is_uped}}" 
+                    class="thumbs-up" src="../../assets/thumbs_up.gif"></image>
+                    <image 
+                    bindtap="upreplyClick" 
+                    data-index="{{index}}"
+                    data-reply-id="{{item.id}}"  
+                    wx:else
+                    class="thumbs-up" src="../../assets/thumbs_up_active.gif"></image>
+                    <text class="up-count">{{item.ups.length}}</text>
+                </view>
+                <image data-reply-id="{{item.id}}" bindtap="replyComment"  class="comment" src="../../assets/reply.gif"></image>
             </view>
         </view>
     </view>
+</view>
+<view class="bottom-item">
+    <input bindfocus="inputFocus" class="reply-input" placeholder="发表评论..." />
 </view>

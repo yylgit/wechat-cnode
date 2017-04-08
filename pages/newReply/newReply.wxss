@@ -1,0 +1,24 @@
+.reply-page {
+    height: 100%;
+    width: 100%;
+    padding: 40rpx 20rpx 120rpx 20rpx;  
+}
+.reply-content {
+    height: 100%;
+    width: 100%;
+}
+
+.submit-btn {
+    height: 60rpx;
+    width: 90%;
+}
+.btn-wrap {
+    position: fixed;
+    bottom: 0px;
+    height: 100rpx;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: #f0f0f0;
+}

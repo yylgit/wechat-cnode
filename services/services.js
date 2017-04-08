@@ -9,9 +9,9 @@ export function getTopics (params) {
 }
 
 //主题详情
-export function getArtical (id) {
+export function getArtical (id, accesstoken) {
     let url = host + '/topic/'+id;
-    return get(url)
+    return get(url, {accesstoken})
 }
 
 //校验用户accesstoekn
@@ -52,4 +52,30 @@ export function notCollectTopic (accesstoken,topic_id) {
         accesstoken,
         topic_id
     })
+}
+
+// 为评论点赞
+export function upreply (accesstoken,reply_id) {
+    let url = host + `/reply/${reply_id}/ups`;
+    return post(url,{
+        accesstoken
+    })
+}
+
+// 发表评论
+/**
+ * accesstoken String 用户的 accessToken
+content String 评论的主体
+reply_id String 如果这个评论是对另一个评论的回复，请务必带上此字段。这样前端就可以构建出评论线索图。
+ */
+export function newReply (accesstoken,content,topic_id,reply_id) {
+    let url = host + `/topic/${topic_id}/replies`;
+    let params = {
+        accesstoken,
+        content
+    }
+    if(reply_id) {
+       params.reply_id = reply_id;
+    }
+    return post(url,params)
 }

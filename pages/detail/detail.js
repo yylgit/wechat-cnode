@@ -20,7 +20,8 @@ Page({
     })
     let {articalId} = options;
     console.log(articalId)
-    services.getArtical(articalId).then(res=>{
+    let token = app.globalData.cnode_token;
+    services.getArtical(articalId, token).then(res=>{
       console.log(res.data.data)
       // 解析HTML字符串
       const html = new HtmlParser(res.data.data.content).nodes

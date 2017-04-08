@@ -10,8 +10,6 @@
     <view class="tip">
         <text>登陆CNode社区-->设置-->下方Access Token二维码</text>
     </view>
-    
-    
     <view class="login-button">
         <button type="primary" bindtap="scanClick">扫码登录</button>
     </view>

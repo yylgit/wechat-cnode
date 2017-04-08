@@ -23,9 +23,10 @@ App({
     } else {
       wx.showModal({
           title: '请先登录',
-          showCancel: false,
-          success: function () {
-              wxNavigateTo('../login/login')
+          success: function (res) {
+              if(res.confirm) {
+                wxNavigateTo('../login/login')
+              }
           }
       })
       return '';
@@ -35,6 +36,7 @@ App({
     userInfo:null,
     cnode_token: null,
     cnode_userInfo: null,
-    isSubmitTopic: false //是否发表文章
+    isSubmitTopic: false, //是否发表文章
+    isSubmitReply: false //是否发表评论
   }
 })

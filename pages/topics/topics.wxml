@@ -30,6 +30,9 @@
         <view class="bottom-text clearfix">
           <text class="author-name">{{item.author.loginname}}</text>
           <text class="create_time">{{item.create_at}}</text>
+          <text class="tab-flag flag">{{item.tabFlag}}</text>
+          <text class="top-flag flag">{{item.topFlag}}</text>
+          <text class="good-flag flag">{{item.goodFlag}}</text>
           <text class="count-text">{{item.reply_count}}/{{item.visit_count}}              </text>
         </view>
       </view>
@@ -45,4 +48,7 @@
 <image class="login-avatar" wx:if="hasLogin" src="{{ userInfo.avatar_url}}"></image>
 <image wx:else class="login-avatar" src="{{ userLoginImage}}"></image>
 </view>
+<!--<view class="envelope" bindtap="envelopeClick">
+<image class="envelope-image" src="../../assets/envelope.gif"></image>
+</view>-->
 

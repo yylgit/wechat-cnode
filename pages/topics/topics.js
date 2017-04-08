@@ -20,6 +20,11 @@ Page({
     hasLogin: false,
     userLoginImage: '../../assets/user.jpg'
   },
+  tabMap: {
+    'share': '分享',
+    'ask': '问答',
+    'job': '招聘'
+  },
   plainData: {
     pullTimeStamp: Date.now()
   },
@@ -53,6 +58,15 @@ Page({
       limit: limit
     }).then(res=>{
       res.data.data = res.data.data.map(item=>{
+        if(item.good){
+          item.goodFlag = "精";
+        }
+        if(item.top) {
+          item.topFlag = '顶';
+        }
+        if(this.tabMap[item.tab]) {
+           item.tabFlag = this.tabMap[item.tab];
+        }
         item.create_at = util.formatTime(new Date(item.create_at))
         return item
       })
@@ -130,5 +144,8 @@ Page({
     } else {
       wxNavigateTo("../userInfo/userInfo")
     }
+  },
+  envelopeClick () {
+    
   }
 })

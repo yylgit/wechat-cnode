@@ -72,11 +72,17 @@ Page({
         }
     },
     inputFocus () {
+        if(!app.getAccessToken()){
+            return
+        }
         wxNavigateTo('../newReply/newReply',{
             articalId:this.data.artical.id
         })
     },
     replyComment (e) {
+        if(!app.getAccessToken()){
+            return
+        }
         let {replyId,authorName} = e.currentTarget.dataset;
         wxNavigateTo('../newReply/newReply',{
             articalId:this.data.artical.id,

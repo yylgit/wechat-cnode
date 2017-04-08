@@ -22,8 +22,7 @@ Page({
         }
     },
     onLoad (options) {
-        // let {articalId} = options;
-        let articalId = '58e607b0ddee72813eb22323';
+        let {articalId} = options;
         this.data.articalId = articalId;
         this.fetchData();
     },
@@ -65,7 +64,7 @@ Page({
                    
                  } else {
                     wx.showToast({
-                        title: res.data.error_message || "操作失败",
+                        title: res.data.error_msg || "操作失败",
                         image:"../../assets/white_error.gif"
                     })
                  }
@@ -78,10 +77,11 @@ Page({
         })
     },
     replyComment (e) {
-        let {replyId} = e.currentTarget.dataset;
+        let {replyId,authorName} = e.currentTarget.dataset;
         wxNavigateTo('../newReply/newReply',{
             articalId:this.data.artical.id,
-            replyId
+            replyId,
+            authorName
         })
     }
 })

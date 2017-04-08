@@ -8,10 +8,12 @@ Page({
     content: '',
     articalId: '',
     replyId: '',
+    authorName: '',
     onLoad(options) {
-        let {articalId,replyId} = options;
+        let {articalId,replyId,authorName} = options;
         this.articalId = articalId;
         this.replyId = replyId;
+        this.authorName = authorName;
     },
     submitClick () {
         if(this.content === '') {
@@ -25,6 +27,10 @@ Page({
             return
         }
         wx.showLoading({title:'发表中...'});
+        // if(this.authorName) {
+        //     this.content = `[@${this.authorName}] ` + this.content;
+        // }
+        // this.content += '<br/>from <a href="https://github.com/yylgit/wechat-cnode">wechat-cnode</a>';
         services.newReply(
             app.getAccessToken(),
             this.content,

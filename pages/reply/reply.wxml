@@ -29,7 +29,7 @@
                     class="thumbs-up" src="../../assets/thumbs_up_active.gif"></image>
                     <text class="up-count">{{item.ups.length}}</text>
                 </view>
-                <image data-reply-id="{{item.id}}" bindtap="replyComment"  class="comment" src="../../assets/reply.gif"></image>
+                <image data-reply-id="{{item.id}}" data-author-name="{{item.author.loginname}}" bindtap="replyComment"  class="comment" src="../../assets/reply.gif"></image>
             </view>
         </view>
     </view>

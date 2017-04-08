@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/reply/reply",
     "pages/topics/topics",
+    "pages/reply/reply",
     "pages/setup/setup",
     "pages/newTopic/newTopic",
     "pages/userInfo/userInfo",

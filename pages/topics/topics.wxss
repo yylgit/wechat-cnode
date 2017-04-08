@@ -108,6 +108,7 @@ page {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 4rpx solid #6EB600;
 }
 .login-avatar {
    width: 80rpx;

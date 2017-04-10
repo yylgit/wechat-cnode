@@ -1,0 +1,19 @@
+{
+  "name": "wechat_cnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yylgit/wechat-cnode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yylgit/wechat-cnode/issues"
+  },
+  "homepage": "https://github.com/yylgit/wechat-cnode#readme"
+}

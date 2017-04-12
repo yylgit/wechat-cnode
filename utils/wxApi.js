@@ -1,45 +1,23 @@
-var Promise = require('../plugins/es6-promise.js')
-import * as util from'./util'
-function wxPromisify(fn) {
-  return function (obj = {}) {
-    return new Promise((resolve, reject) => {
-      obj.success = function (res) {
-        //成功
-        resolve(res)
-      }
-      obj.fail = function (res) {
-        //失败
-        reject(res)
-      }
-      fn(obj)
-    })
-  }
-}
-//无论promise对象最后状态如何都会执行
-Promise.prototype.finally = function (callback) {
-  let P = this.constructor;
-  return this.then(
-    value => P.resolve(callback()).then(() => value),
-    reason => P.resolve(callback()).then(() => { throw reason })
-  );
-};
+
+import {wxPromisify,json2Form } from './util'
+
 /**
  * 微信用户登录,获取code
  */
-function wxLogin() {
+export function wxLogin() {
   return wxPromisify(wx.login)
 }
 /**
  * 获取微信用户信息
  * 注意:须在登录之后调用
  */
-function wxGetUserInfo() {
+export function wxGetUserInfo() {
   return wxPromisify(wx.getUserInfo)
 }
 /**
  * 获取系统信息
  */
-function wxGetSystemInfo() {
+export function wxGetSystemInfo() {
   return wxPromisify(wx.getSystemInfo)()
 }
 
@@ -47,14 +25,14 @@ function wxGetSystemInfo() {
 /**
  * 扫码
  */
-function wxScanCode(obj) {
+export function wxScanCode(obj) {
   return wxPromisify(wx.scanCode)(obj)
 }
 
 /**
  * 扫码
  */
-function wxGetStorage(key) {
+export function wxGetStorage(key) {
   return wxPromisify(wx.getStorage)({key})
 }
 
@@ -64,9 +42,9 @@ function wxGetStorage(key) {
  * url:'../index/index'
  * params:{key:value1}
  */
-function wxNavigateTo(url, params) {
+export function wxNavigateTo(url, params) {
   var wxNavigateTo = wxPromisify(wx.navigateTo)
-  const serializedParams = util.json2Form(params)
+  const serializedParams = json2Form(params)
   if (serializedParams.length > 0) {
     url += ((url.indexOf('?') == -1) ? '?' : '&') + serializedParams
   }
@@ -80,9 +58,9 @@ function wxNavigateTo(url, params) {
  * url:'../index/index'
  * params:{key:value1}
  */
-function wxRedirectTo(url, params) {
+export function wxRedirectTo(url, params) {
   var redirectTo = wxPromisify(wx.redirectTo)
-  const serializedParams = util.json2Form(params)
+  const serializedParams = json2Form(params)
   if (serializedParams.length > 0) {
     url += ((url.indexOf('?') == -1) ? '?' : '&') + serializedParams
   }
@@ -90,13 +68,4 @@ function wxRedirectTo(url, params) {
     url: url
   })
 }
-module.exports = {
-  wxNavigateTo,
-  wxPromisify,
-  wxLogin,
-  wxGetUserInfo,
-  wxGetSystemInfo,
-  wxScanCode,
-  wxGetStorage,
-  wxRedirectTo
-}
+
